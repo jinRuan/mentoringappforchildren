@@ -2,7 +2,7 @@
 <script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
 <script>ZiggeoApi.token = "b6c4129db684db7a9940606cad1a0c75";</script>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+<div style="width:50%; margin: auto; background-color: #ecf0f1; border-radius: 1%; height:100%;">
 <%= form_for(@mentor) do |f| %>
   <% if @mentor.errors.any? %>
     <div id="error_explanation">
@@ -18,37 +18,42 @@
 
 
 
-  <div class="field">
+  <div class="field" style="margin:auto;">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+      <br>
+  <div class="field" style="margin:auto;">
     <%= f.label :picture %><br>
     <%= f.text_field :picture %>
   </div>
-  <div class="field">
+      <br>
+  <div class="field" style="margin:auto;">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+      <br>
 
-
-
-  <div class="field">
+      <ziggeo ziggeo-width=320
+              ziggeo-height=240 style="float:right; margin-top:-20%;  ">
+      </ziggeo>
+<br>
+  <div class="field" style="margin:auto;">
     <%= f.label :skills %><br>
     <%= f.text_area :skills %>
   </div>
-  <div class="actions">
+      <br>
+  <div class="actions" style="margin:auto;">
     <%= f.submit %>
   </div>
-
+<br>
   <div id="vid_token">
+
 
   </div>
 
     <!-- Record Video -->
-    <ziggeo ziggeo-width=320
-            ziggeo-height=240>
-    </ziggeo>
+
 
     <script type="text/javascript">
       ZiggeoApi.Events.on("submitted", function (data) {
@@ -64,3 +69,4 @@
 
     </script>
 <% end %>
+</div>

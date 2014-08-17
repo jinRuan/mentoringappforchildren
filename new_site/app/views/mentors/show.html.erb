@@ -9,7 +9,7 @@
 
 
 
-        $.post('https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]='+my_num+'&postparam[message]='+my_message+'&PHPSESSID=gae519f8k5humje0jqb195nob6');
+        $.get('https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]='+my_num+'&postparam[message]='+my_message+'&PHPSESSID=gae519f8k5humje0jqb195nob6');
         alert("Your message has been sent!");
     });
 
@@ -46,17 +46,17 @@
 <p style="text-align: center; padding:20%;">
   <hr>
   <br>
-  <ziggeo ziggeo-video="718e20a0403ebf688b10503ab452e6f3"
+  <ziggeo ziggeo-video="a62a2e3124e062e993cefc2f58c6ad0e"
           ziggeo-width=400
           ziggeo-height=300 style="margin:auto;">
   </ziggeo>
 </p>
 
   <form id="form"  style="width:90%; margin-left:20%;">
-    <input type="number" id="number" placeholder="your phone number">
-    <input type="text" name = "email" id="email" placeholder="what do you want to say?">
-    <input type="submit" value = "submit">
-  </form>
+  <input type="number" id="number" placeholder="your phone number">
+  <input type="text" name = "email" id="email" placeholder="what do you want to say?">
+  <input type="submit" value = "submit">
+</form>
 <br>
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
