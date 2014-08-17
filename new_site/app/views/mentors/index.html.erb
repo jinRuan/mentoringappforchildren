@@ -1,33 +1,55 @@
 <h1>Listing mentors</h1>
 
-<table  >
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Picture</th>
-      <th>Description</th>
-      <th>Skills</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <style scoped>
+	.mentors-list
+	{
+		tr:nth-child(even) > td
+		{
+			background: #EEE;
+		}
+	}
+	.mentor-list-ul
+	{
+		list-style: none;
+	}
+	.mentor-item
+	{
+		background: #EEE;
+		border-radius: 5px;
+		width: 40%;
+		float: left;
+		text-align: center;
+	}
+	.mentor-item img
+	{
+		max-width: 80%;
+		margin: 0px auto;
+	}
+  </style>
+<!-- name picture desc skills -->
+<div style="max-width: 100%">
+	<ul class="mentor-list-ul">
 
-  <tbody>
-    <% @mentors.each do |mentor| %>
-      <tr>
-        <td><%= mentor.name %></td>
-        <td><img src="<%= mentor.picture %>"></td>
-        <td><%= mentor.description %></td>
-        <td><%= mentor.skills %></td>
+    	     <% @mentors.each do |mentor| %>
+		<li class="mentor-item">
+			<h3><%= mentor.name %></h3>
+			<img src="<%= mentor.picture %>" class="mentor-pic" />
+			<p class="desc"><%= mentor.description %></p>
+			<p class="skills"><%= mentor.skills %></p>
+		<table>
+	<tr>
         <td><%= link_to 'Show', mentor %></td>
         <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
         <td><%= link_to 'Destroy', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+	</table>
 
-<br>
+	
+		</li>
+	<% end %>
+	</ul>
+</div>
 
-<%= link_to 'New Mentor', new_mentor_path %>
+<br/><br/>
+<%= link_to 'New Mentor', new_mentor_path, class: 'btn btn-primary' %>
+
