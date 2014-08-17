@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+<script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
+<script>ZiggeoApi.token = "b6c4129db684db7a9940606cad1a0c75";</script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -7,7 +11,7 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @mentor.picture %>
+  <img src="<%= @mentor.picture %>"/>
 </p>
 
 <p>
@@ -22,3 +26,14 @@
 
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
+
+<!-- Record Video -->
+<ziggeo ziggeo-width=320
+        ziggeo-height=240>
+</ziggeo>
+
+<!-- Play Video -->
+<ziggeo ziggeo-video="_sample_video" 
+        ziggeo-width=320
+        ziggeo-height=240>
+</ziggeo>
