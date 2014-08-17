@@ -17,7 +17,7 @@
     <% @mentors.each do |mentor| %>
       <tr>
         <td><%= mentor.name %></td>
-        <td><%= mentor.picture %></td>
+        <td><img src="<%= mentor.picture %>"></td>
         <td><%= mentor.description %></td>
         <td><%= mentor.skills %></td>
         <td><%= link_to 'Show', mentor %></td>
