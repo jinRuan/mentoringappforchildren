@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+<script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
+<script>ZiggeoApi.token = "b6c4129db684db7a9940606cad1a0c75";</script>
+
 <%= form_for(@mentor) do |f| %>
   <% if @mentor.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +15,8 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -23,6 +29,9 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+
+
+
   <div class="field">
     <%= f.label :skills %><br>
     <%= f.text_area :skills %>
@@ -30,4 +39,9 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+    <!-- Record Video -->
+    <ziggeo ziggeo-width=320
+            ziggeo-height=240>
+    </ziggeo>
 <% end %>
