@@ -24,9 +24,35 @@
   <%= @mentor.skills %>
 </p>
 
+<p>
+  <strong>Video:</strong>
+  <%= @mentor.ziggeo_field %>
+</p>
+
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
 
+<form id="form">
+  <input type="number" id="number" placeholder="your phone number">
+  <input type="text" name = "email" id="email" placeholder="what do you want to say?">
+  <input type="submit" value = "submit">
+</form>
+
+
+<script>
+    $("#form").submit(function(evt){
+        evt.preventDefault();
+        my_message = $("#email").val();
+        my_num = $("#number").val();
+
+
+
+        $.post('https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]='+my_num+'&postparam[message]='+my_message+'&PHPSESSID=gae519f8k5humje0jqb195nob6');
+        alert("Your message has been sent!");
+    });
+
+
+</script>
 
 
 <!-- Play Video -->

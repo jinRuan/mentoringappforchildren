@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
 <script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
 <script>ZiggeoApi.token = "b6c4129db684db7a9940606cad1a0c75";</script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <%= form_for(@mentor) do |f| %>
   <% if @mentor.errors.any? %>
@@ -40,6 +41,10 @@
     <%= f.submit %>
   </div>
 
+  <div id="vid_token">
+
+  </div>
+
     <!-- Record Video -->
     <ziggeo ziggeo-width=320
             ziggeo-height=240>
@@ -48,5 +53,14 @@
     <script type="text/javascript">
       ZiggeoApi.Events.on("submitted", function (data) {
       alert("Submitted a new video with token '" + data.video.token + "'!");
-});</script>
+      $("<input>").attr({
+        type: 'hidden',
+        name: 'mentors[ziggeo_field]',
+        value: data.video.token
+      }).appendTo('#vid_token');
+      });
+
+
+
+    </script>
 <% end %>
